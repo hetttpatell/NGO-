@@ -22,7 +22,31 @@ export default function Connect() {
   const [focused, setFocused] = useState(null)
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value })
-  const handleSubmit = (e) => { e.preventDefault(); setSubmitted(true) }
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    const WHATSAPP_NUMBER = '919879794198' // +91 9879794198 without leading +
+
+    const typeLabel = {
+      volunteer: 'Volunteer',
+      donate: 'Donate',
+      'in-kind': 'In-Kind Support',
+      other: 'Other Inquiry',
+    }[form.type] || form.type
+
+    const message =
+      `*New Message — Shree Sneh Foundation*\n\n` +
+      `*Name:* ${form.name}\n` +
+      `*Email:* ${form.email}\n` +
+      (form.phone ? `*Phone:* ${form.phone}\n` : '') +
+      `*Interest:* ${typeLabel}\n\n` +
+      `*Message:*\n${form.message}`
+
+    const encodedMessage = encodeURIComponent(message)
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`, '_blank', 'noopener,noreferrer')
+
+    setSubmitted(true)
+  }
   const getFocusStyle = (name) => focused === name
     ? { ...inputBase, borderColor: '#B8860B', boxShadow: '0 0 0 2px rgba(184,134,11,0.1)' }
     : inputBase

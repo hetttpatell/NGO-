@@ -191,6 +191,25 @@ function GalleryCard({ item, onClick }) {
           </div>
         </>
       )}
+
+      {/* Subtle bottom tag */}
+      <div style={{
+        position: 'absolute', bottom: 0, left: 0, right: 0,
+        background: 'linear-gradient(to top, rgba(0,0,0,0.52) 0%, transparent 100%)',
+        padding: '20px 10px 8px',
+        pointerEvents: 'none',
+      }}>
+        <span style={{
+          fontSize: '0.58rem',
+          fontFamily: '"IBM Plex Mono", monospace',
+          letterSpacing: '0.12em',
+          textTransform: 'uppercase',
+          color: 'rgba(255,255,255,0.75)',
+          fontWeight: 500,
+        }}>
+          {item.tab}
+        </span>
+      </div>
     </div>
   )
 }

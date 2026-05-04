@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import SectionCTA from '../components/SectionCTA'
 import { useEffect } from 'react'
 import gsap from 'gsap'
@@ -196,7 +197,7 @@ export default function Initiatives() {
                   </p>
                 </div>
 
-                <a href="/connect" style={{
+                <Link to="/connect" style={{
                   display: 'inline-block',
                   padding: '12px 32px',
                   border: '1px solid #1A1A1A',
@@ -207,15 +208,16 @@ export default function Initiatives() {
                   textTransform: 'uppercase',
                   letterSpacing: '0.1em',
                   transition: 'all 0.3s ease',
+                  cursor: 'pointer',
                 }} onMouseEnter={(e) => {
-                  e.target.style.background = '#1A1A1A';
-                  e.target.style.color = '#FFF';
+                  e.currentTarget.style.background = '#1A1A1A';
+                  e.currentTarget.style.color = '#FFF';
                 }} onMouseLeave={(e) => {
-                  e.target.style.background = 'transparent';
-                  e.target.style.color = '#1A1A1A';
+                  e.currentTarget.style.background = 'transparent';
+                  e.currentTarget.style.color = '#1A1A1A';
                 }}>
                   Connect to Support
-                </a>
+                </Link>
               </div>
 
               {/* Image Column */}

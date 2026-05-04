@@ -11,7 +11,7 @@ const values = [
     description: 'Every action we take is rooted in selfless service, inspired by the Bhagavad Gita\'s call to act without expectation of reward.',
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#B8860B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
       </svg>
     ),
   },
@@ -20,7 +20,7 @@ const values = [
     description: 'We approach every individual with empathy and kindness, recognizing the inherent dignity in every human being.',
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#B8860B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" />
       </svg>
     ),
   },
@@ -29,7 +29,7 @@ const values = [
     description: 'We believe lasting change comes through collective effort — partnering with communities, volunteers, and supporters.',
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#B8860B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+        <circle cx="12" cy="12" r="10" /><path d="M2 12h20" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
       </svg>
     ),
   },
@@ -38,36 +38,36 @@ const values = [
     description: 'We are committed to sustainable development that empowers communities to grow and thrive independently.',
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#B8860B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>
+        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" /><polyline points="17 6 23 6 23 12" />
       </svg>
     ),
   },
 ]
 
 const team = [
-  { 
-    name: 'Rajesh Sharma', 
-    role: 'Founder & Director', 
-    bio: 'A retired teacher who dedicated his life to rural education after witnessing children walk miles to school.', 
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80' 
+  {
+    name: 'Dhwani panchal',
+    role: 'Activity Head & Executer',
+    bio: 'I believe that every small step can bring a big change in someone\'s life.I am here to do my bit for the society with my team.I am looking forward to gain a lot of love and support from all of you to make this initiative a success.',
+    image: '/Dwanipanchal.png'
   },
-  { 
-    name: 'Priya Patel', 
-    role: 'Program Coordinator', 
-    bio: 'Social worker with 15 years of experience in community development and hunger relief programs.', 
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80' 
+  {
+    name: 'Priya Patel',
+    role: 'Program Coordinator',
+    bio: 'Social worker with 15 years of experience in community development and hunger relief programs.',
+    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80'
   },
-  { 
-    name: 'Amit Verma', 
-    role: 'Elder Care Lead', 
-    bio: 'Geriatric care specialist ensuring dignity and comfort for every elder in our support network.', 
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80' 
+  {
+    name: 'Amit Verma',
+    role: 'Elder Care Lead',
+    bio: 'Geriatric care specialist ensuring dignity and comfort for every elder in our support network.',
+    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80'
   },
-  { 
-    name: 'Sunita Devi', 
-    role: 'Education Officer', 
-    bio: 'Former village schoolteacher who now oversees education programs across 50+ villages.', 
-    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80' 
+  {
+    name: 'Sunita Devi',
+    role: 'Education Officer',
+    bio: 'Former village schoolteacher who now oversees education programs across 50+ villages.',
+    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80'
   },
 ]
 
@@ -518,9 +518,9 @@ export default function About() {
                 }} />
 
                 <div className="team-avatar">
-                  <img 
-                    src={member.image} 
-                    alt={member.name} 
+                  <img
+                    src={member.image}
+                    alt={member.name}
                     style={{
                       width: '100%',
                       height: '100%',

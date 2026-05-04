@@ -182,7 +182,7 @@ export default function Connect() {
               </div>
 
               {/* Bank Details */}
-              <div style={{ background: '#F5F3F0', border: '1px solid #E8E4DF', borderRadius: '8px', padding: '28px' }}>
+              {/* <div style={{ background: '#F5F3F0', border: '1px solid #E8E4DF', borderRadius: '8px', padding: '28px' }}>
                 <h3 style={{ fontFamily: '"Playfair Display", Georgia, serif', fontWeight: 600, fontSize: '1rem', color: '#1A1A1A', marginBottom: '16px' }}>Bank Details for Donation</h3>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                   {[
@@ -197,7 +197,7 @@ export default function Connect() {
                     </div>
                   ))}
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

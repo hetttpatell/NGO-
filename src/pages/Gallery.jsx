@@ -6,22 +6,22 @@ import { gsap } from 'gsap'
 // "awards-*" files are mapped to the "Events" tab.
 const galleryItems = [
   // ── All ──────────────────────────────────────────────────────────────────
-  { id: 'all-1',       src: '/gallery/all-1.jpeg',       tab: 'All',      type: 'image', title: 'All – 1' },
-  { id: 'all-2',       src: '/gallery/all-2.jpeg',       tab: 'All',      type: 'image', title: 'All – 2' },
-  { id: 'all-3',       src: '/gallery/all-3.jpeg',       tab: 'All',      type: 'image', title: 'All – 3' },
-  { id: 'all-4',       src: '/gallery/all-4.jpeg',       tab: 'All',      type: 'image', title: 'All – 4' },
-  { id: 'all-video-1', src: '/gallery/all-video-1.mp4',  tab: 'All',      type: 'video', title: 'All – Video 1', poster: '/gallery/all-1.jpeg' },
+  { id: 'all-1', src: '/gallery/all-1.jpeg', tab: 'All', type: 'image', title: 'All – 1' },
+  { id: 'all-2', src: '/gallery/all-2.jpeg', tab: 'All', type: 'image', title: 'All – 2' },
+  { id: 'all-3', src: '/gallery/all-3.jpeg', tab: 'All', type: 'image', title: 'All – 3' },
+  { id: 'all-4', src: '/gallery/all-4.jpeg', tab: 'All', type: 'image', title: 'All – 4' },
+  { id: 'all-video-1', src: '/gallery/all-video-1.mp4', tab: 'All', type: 'video', title: 'All – Video 1', poster: '/gallery/all-1.jpeg' },
 
   // ── Orphanage ────────────────────────────────────────────────────────────
-  { id: 'orphanage-1',  src: '/gallery/Orphanage-1.jpeg',  tab: 'Orphanage', type: 'image', title: 'Orphanage – 1'  },
-  { id: 'orphanage-2',  src: '/gallery/Orphanage-2.jpeg',  tab: 'Orphanage', type: 'image', title: 'Orphanage – 2'  },
-  { id: 'orphanage-3',  src: '/gallery/Orphanage-3.jpeg',  tab: 'Orphanage', type: 'image', title: 'Orphanage – 3'  },
-  { id: 'orphanage-4',  src: '/gallery/Orphanage-4.jpeg',  tab: 'Orphanage', type: 'image', title: 'Orphanage – 4'  },
-  { id: 'orphanage-5',  src: '/gallery/Orphanage-5.jpeg',  tab: 'Orphanage', type: 'image', title: 'Orphanage – 5'  },
-  { id: 'orphanage-6',  src: '/gallery/Orphanage-6.jpeg',  tab: 'Orphanage', type: 'image', title: 'Orphanage – 6'  },
-  { id: 'orphanage-7',  src: '/gallery/Orphanage-7.jpeg',  tab: 'Orphanage', type: 'image', title: 'Orphanage – 7'  },
-  { id: 'orphanage-8',  src: '/gallery/Orphanage-8.jpeg',  tab: 'Orphanage', type: 'image', title: 'Orphanage – 8'  },
-  { id: 'orphanage-9',  src: '/gallery/Orphanage-9.jpeg',  tab: 'Orphanage', type: 'image', title: 'Orphanage – 9'  },
+  { id: 'orphanage-1', src: '/gallery/Orphanage-1.jpeg', tab: 'Orphanage', type: 'image', title: 'Orphanage – 1' },
+  { id: 'orphanage-2', src: '/gallery/Orphanage-2.jpeg', tab: 'Orphanage', type: 'image', title: 'Orphanage – 2' },
+  { id: 'orphanage-3', src: '/gallery/Orphanage-3.jpeg', tab: 'Orphanage', type: 'image', title: 'Orphanage – 3' },
+  { id: 'orphanage-4', src: '/gallery/Orphanage-4.jpeg', tab: 'Orphanage', type: 'image', title: 'Orphanage – 4' },
+  { id: 'orphanage-5', src: '/gallery/Orphanage-5.jpeg', tab: 'Orphanage', type: 'image', title: 'Orphanage – 5' },
+  { id: 'orphanage-6', src: '/gallery/Orphanage-6.jpeg', tab: 'Orphanage', type: 'image', title: 'Orphanage – 6' },
+  { id: 'orphanage-7', src: '/gallery/Orphanage-7.jpeg', tab: 'Orphanage', type: 'image', title: 'Orphanage – 7' },
+  { id: 'orphanage-8', src: '/gallery/Orphanage-8.jpeg', tab: 'Orphanage', type: 'image', title: 'Orphanage – 8' },
+  { id: 'orphanage-9', src: '/gallery/Orphanage-9.jpeg', tab: 'Orphanage', type: 'image', title: 'Orphanage – 9' },
   { id: 'orphanage-10', src: '/gallery/Orphanage-10.jpeg', tab: 'Orphanage', type: 'image', title: 'Orphanage – 10' },
   { id: 'orphanage-11', src: '/gallery/Orphanage-11.jpeg', tab: 'Orphanage', type: 'image', title: 'Orphanage – 11' },
 
@@ -271,7 +271,7 @@ export default function Gallery() {
       }}>
         <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
           <img
-            src="/gallery/all-1.jpeg"
+            src="/gallery.jpg"
             alt="Gallery hero"
             aria-hidden="true"
             loading="eager"

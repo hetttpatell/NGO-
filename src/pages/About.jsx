@@ -1,70 +1,229 @@
-import AmbientGlow from '../components/BlurShape'
+import { useEffect, useRef } from 'react'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import SectionCTA from '../components/SectionCTA'
+
+gsap.registerPlugin(ScrollTrigger)
 
 const values = [
   {
     title: 'Seva — Selfless Service',
     description: 'Every action we take is rooted in selfless service, inspired by the Bhagavad Gita\'s call to act without expectation of reward.',
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#B8860B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+      </svg>
+    ),
   },
   {
     title: 'Karuna — Compassion',
     description: 'We approach every individual with empathy and kindness, recognizing the inherent dignity in every human being.',
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#B8860B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+      </svg>
+    ),
   },
   {
     title: 'Sahayog — Cooperation',
     description: 'We believe lasting change comes through collective effort — partnering with communities, volunteers, and supporters.',
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#B8860B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+      </svg>
+    ),
   },
   {
     title: 'Vikas — Growth',
     description: 'We are committed to sustainable development that empowers communities to grow and thrive independently.',
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#B8860B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>
+      </svg>
+    ),
   },
 ]
 
 const team = [
-  { name: 'Rajesh Sharma', role: 'Founder & Director', bio: 'A retired teacher who dedicated his life to rural education after witnessing children walk miles to school.', initial: 'R' },
-  { name: 'Priya Patel', role: 'Program Coordinator', bio: 'Social worker with 15 years of experience in community development and hunger relief programs.', initial: 'P' },
-  { name: 'Amit Verma', role: 'Elder Care Lead', bio: 'Geriatric care specialist ensuring dignity and comfort for every elder in our support network.', initial: 'A' },
-  { name: 'Sunita Devi', role: 'Education Officer', bio: 'Former village schoolteacher who now oversees education programs across 50+ villages.', initial: 'S' },
+  { 
+    name: 'Rajesh Sharma', 
+    role: 'Founder & Director', 
+    bio: 'A retired teacher who dedicated his life to rural education after witnessing children walk miles to school.', 
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80' 
+  },
+  { 
+    name: 'Priya Patel', 
+    role: 'Program Coordinator', 
+    bio: 'Social worker with 15 years of experience in community development and hunger relief programs.', 
+    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80' 
+  },
+  { 
+    name: 'Amit Verma', 
+    role: 'Elder Care Lead', 
+    bio: 'Geriatric care specialist ensuring dignity and comfort for every elder in our support network.', 
+    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80' 
+  },
+  { 
+    name: 'Sunita Devi', 
+    role: 'Education Officer', 
+    bio: 'Former village schoolteacher who now oversees education programs across 50+ villages.', 
+    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80' 
+  },
+]
+
+const wwdItems = [
+  {
+    title: 'Hunger Relief',
+    desc: 'Daily meal programs nourishing families across 50+ villages with dignity and care.',
+    img: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80',
+    stat: '5,000+',
+    statLabel: 'Meals Served Monthly',
+  },
+  {
+    title: 'Education',
+    desc: 'Free education centers empowering children with knowledge and equal opportunity.',
+    img: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80',
+    stat: '1,200+',
+    statLabel: 'Students Enrolled',
+  },
+  {
+    title: 'Elder Care',
+    desc: 'Compassionate support ensuring our elders live with dignity, comfort, and belonging.',
+    img: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80',
+    stat: '200+',
+    statLabel: 'Seniors Supported',
+  },
+  {
+    title: 'Orphan Shelter',
+    desc: 'A loving home for children without families — giving them safety, warmth, and hope.',
+    img: 'https://images.unsplash.com/photo-1594608661623-aa0bd3a69d98?auto=format&fit=crop&w=800&q=80',
+    stat: '40+',
+    statLabel: 'Children Sheltered',
+  },
 ]
 
 export default function About() {
+  const wwdRef = useRef(null)
+  const valuesRef = useRef(null)
+  const teamRef = useRef(null)
+
+  useEffect(() => {
+    // Small delay to ensure DOM is fully rendered before ScrollTrigger calculates positions
+    const timer = setTimeout(() => {
+      const ctx = gsap.context(() => {
+        // What We Do cards
+        gsap.fromTo('.wwd-card',
+          { y: 60, opacity: 0 },
+          {
+            scrollTrigger: { trigger: wwdRef.current, start: 'top 85%', toggleActions: 'play none none none', once: true },
+            y: 0, opacity: 1, duration: 0.7, stagger: 0.15, ease: 'power3.out',
+          }
+        )
+
+        // Values cards
+        gsap.fromTo('.value-card',
+          { y: 50, opacity: 0 },
+          {
+            scrollTrigger: { trigger: valuesRef.current, start: 'top 85%', toggleActions: 'play none none none', once: true },
+            y: 0, opacity: 1, duration: 0.6, stagger: 0.12, ease: 'power3.out',
+          }
+        )
+
+        // Team cards
+        gsap.fromTo('.team-card',
+          { y: 50, opacity: 0, scale: 0.95 },
+          {
+            scrollTrigger: { trigger: teamRef.current, start: 'top 85%', toggleActions: 'play none none none', once: true },
+            y: 0, opacity: 1, scale: 1, duration: 0.65, stagger: 0.13, ease: 'power3.out',
+          }
+        )
+
+        // Section headers
+        gsap.utils.toArray('.about-section-header').forEach(el => {
+          gsap.fromTo(el,
+            { y: 30, opacity: 0 },
+            {
+              scrollTrigger: { trigger: el, start: 'top 90%', toggleActions: 'play none none none', once: true },
+              y: 0, opacity: 1, duration: 0.6, ease: 'power2.out',
+            }
+          )
+        })
+
+        // Refresh ScrollTrigger after all animations are set up
+        ScrollTrigger.refresh()
+      })
+
+      return () => ctx.revert()
+    }, 100)
+
+    return () => clearTimeout(timer)
+  }, [])
+
   return (
     <>
       {/* ═══ HERO ═══ */}
       <section style={{
         position: 'relative',
-        padding: 'clamp(120px, 15vw, 180px) 24px 80px',
+        minHeight: '60vh',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        padding: '160px 24px 80px',
         overflow: 'hidden',
       }}>
-        <AmbientGlow color="#B8860B" size="500px" position={{ top: '-200px', right: '-100px' }} opacity={0.02} />
+        <div style={{
+          position: 'absolute', inset: 0, zIndex: 0,
+        }}>
+          <img
+            src="https://images.unsplash.com/photo-1542810634-71277d95dcbb?auto=format&fit=crop&w=1920&q=80"
+            alt=""
+            aria-hidden="true"
+            style={{
+              width: '100%', height: '100%',
+              objectFit: 'cover', objectPosition: 'center 40%',
+              display: 'block',
+            }}
+          />
+          <div style={{
+            position: 'absolute', inset: 0,
+            background: 'linear-gradient(to bottom, rgba(15,12,8,0.75) 0%, rgba(15,12,8,0.6) 40%, rgba(15,12,8,0.85) 100%)',
+          }} />
+        </div>
 
-        <div style={{ maxWidth: '1024px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
+        <div style={{ maxWidth: '1024px', margin: '0 auto', position: 'relative', zIndex: 1, width: '100%', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <div style={{
             fontFamily: '"IBM Plex Mono", monospace',
             fontSize: '0.7rem', fontWeight: 500,
             letterSpacing: '0.15em', textTransform: 'uppercase',
-            color: '#B8860B', marginBottom: '24px',
+            color: 'rgba(255,255,255,0.6)', marginBottom: '24px',
             display: 'flex', alignItems: 'center', gap: '12px',
           }}>
-            <span style={{ width: '32px', height: '1px', background: '#B8860B' }} />
+            <span style={{ width: '32px', height: '1px', background: 'rgba(255,255,255,0.25)' }} />
             Our Story
+            <span style={{ width: '32px', height: '1px', background: 'rgba(255,255,255,0.25)' }} />
           </div>
 
           <h1 style={{
             fontFamily: '"Playfair Display", Georgia, serif',
-            fontSize: 'clamp(2rem, 5vw, 3.5rem)',
+            fontSize: 'clamp(2.5rem, 6vw, 4rem)',
             fontWeight: 400,
-            color: '#1A1A1A',
+            color: '#FFFFFF',
             lineHeight: 1.15,
             marginBottom: '24px',
-            maxWidth: '650px',
+            maxWidth: '800px',
             letterSpacing: '-0.02em',
           }}>
-            About <em style={{ color: '#B8860B' }}>Shreekrishna NGO</em>
+            About <em style={{ color: '#D4A84B', fontStyle: 'italic' }}>Shree Sneh Foundation</em>
           </h1>
-          <p style={{ fontSize: '1.05rem', color: '#6B6B6B', lineHeight: 1.8, maxWidth: '560px' }}>
+          <p style={{
+            fontSize: '1.15rem',
+            color: 'rgba(255,255,255,0.8)',
+            lineHeight: 1.8,
+            maxWidth: '600px',
+            fontFamily: '"Source Sans 3", system-ui, sans-serif',
+          }}>
             Born from a simple act of kindness in a small Uttar Pradesh village,
-            Shreekrishna NGO has grown into a beacon of hope for thousands across rural India.
+            Shree Sneh Foundation has grown into a beacon of hope for thousands across rural India.
           </p>
         </div>
       </section>
@@ -98,7 +257,7 @@ export default function About() {
                 {[
                   'In 2015, a group of young professionals from a small village in Uttar Pradesh witnessed children walking over 5 kilometers just to reach the nearest school. They saw elders living alone without medical care, and families struggling to afford a single meal a day.',
                   'Moved by these realities and inspired by the teachings of Lord Krishna — particularly the principle of Nishkama Karma (selfless action) — they decided to act. What began as a small community kitchen feeding 20 families has evolved into a multi-faceted organization touching lives across 50+ villages.',
-                  'Today, Shreekrishna NGO runs education centers, daily meal programs, elder care facilities, and orphan shelters — all driven by the belief that compassion can transform communities.',
+                  'Today, Shree Sneh Foundation runs education centers, daily meal programs, elder care facilities, and orphan shelters — all driven by the belief that compassion can transform communities.',
                 ].map((para, i) => (
                   <p key={i} style={{ fontSize: '0.95rem', color: '#6B6B6B', lineHeight: 1.9 }}>{para}</p>
                 ))}
@@ -150,10 +309,112 @@ export default function About() {
         </div>
       </section>
 
-      {/* ═══ CORE VALUES ═══ */}
-      <section style={{ padding: '100px 24px', position: 'relative', overflow: 'hidden', background: '#F5F3F0' }}>
-        <div style={{ maxWidth: '1024px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
-          <div style={{ textAlign: 'center', marginBottom: '56px' }}>
+      {/* ═══ WHAT WE DO — Redesigned ═══ */}
+      <section ref={wwdRef} style={{
+        padding: '100px 24px',
+        position: 'relative',
+        overflow: 'hidden',
+        background: 'linear-gradient(180deg, #1A1A1A 0%, #2A2420 100%)',
+      }}>
+        {/* Subtle pattern overlay */}
+        <div style={{
+          position: 'absolute', inset: 0, opacity: 0.03,
+          backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.3) 1px, transparent 0)',
+          backgroundSize: '32px 32px',
+        }} />
+
+        <div style={{ maxWidth: '1120px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
+          <div className="about-section-header" style={{ textAlign: 'center', marginBottom: '64px' }}>
+            <div style={{
+              display: 'flex', alignItems: 'center', gap: '1rem',
+              marginBottom: '1.5rem', justifyContent: 'center',
+            }}>
+              <span style={{ flex: '0 0 60px', height: '1px', background: 'rgba(255,255,255,0.15)' }} />
+              <span style={{
+                fontFamily: '"IBM Plex Mono", monospace',
+                fontSize: '0.75rem', fontWeight: 500,
+                letterSpacing: '0.15em', textTransform: 'uppercase',
+                color: '#D4A84B',
+              }}>What We Do</span>
+              <span style={{ flex: '0 0 60px', height: '1px', background: 'rgba(255,255,255,0.15)' }} />
+            </div>
+            <h2 style={{
+              fontFamily: '"Playfair Display", Georgia, serif',
+              fontSize: 'clamp(1.75rem, 4vw, 2.75rem)',
+              fontWeight: 400, color: '#FFFFFF', letterSpacing: '-0.01em',
+              marginBottom: '16px',
+            }}>Transforming Lives Through <em style={{ color: '#D4A84B', fontStyle: 'italic' }}>Action</em></h2>
+            <p style={{ color: 'rgba(255,255,255,0.55)', maxWidth: '540px', margin: '0 auto', fontSize: '1rem', lineHeight: 1.7 }}>
+              Four pillars of service that drive our mission to uplift communities across rural India.
+            </p>
+          </div>
+
+          <div className="about-grid-4">
+            {wwdItems.map((item) => (
+              <div key={item.title} className="wwd-card" style={{ background: 'rgba(255, 255, 255, 0.03)', border: '1px solid rgba(255,255,255,0.08)', backdropFilter: 'blur(12px)' }}>
+                {/* Image */}
+                <div style={{ overflow: 'hidden', position: 'relative' }}>
+                  <img className="wwd-img" src={item.img} alt={item.title} loading="lazy" />
+                  <div style={{
+                    position: 'absolute', inset: 0,
+                    background: 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 50%, transparent 100%)',
+                  }} />
+                  {/* Stat badge */}
+                  <div style={{
+                    position: 'absolute', bottom: '14px', left: '16px',
+                    display: 'flex', alignItems: 'baseline', gap: '6px', flexWrap: 'wrap'
+                  }}>
+                    <span className="wwd-stat" style={{
+                      fontFamily: '"Playfair Display", Georgia, serif',
+                      fontSize: '1.5rem', fontWeight: 700, color: '#D4A84B',
+                      lineHeight: 1,
+                    }}>{item.stat}</span>
+                    <span className="wwd-stat-label" style={{
+                      fontFamily: '"IBM Plex Mono", monospace',
+                      fontSize: '0.55rem', fontWeight: 500,
+                      letterSpacing: '0.1em', textTransform: 'uppercase',
+                      color: 'rgba(255,255,255,0.8)',
+                    }}>{item.statLabel}</span>
+                  </div>
+                </div>
+                {/* Content */}
+                <div className="wwd-content" style={{ padding: '24px 20px 28px' }}>
+                  <h3 style={{
+                    fontFamily: '"Playfair Display", Georgia, serif',
+                    fontWeight: 600, fontSize: '1.15rem', color: '#FFFFFF',
+                    marginBottom: '8px', letterSpacing: '-0.01em',
+                  }}>{item.title}</h3>
+                  <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.75 }}>{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ GUIDING PRINCIPLES — Redesigned ═══ */}
+      <section ref={valuesRef} style={{
+        padding: '110px 24px',
+        position: 'relative',
+        overflow: 'hidden',
+        background: '#F5F3F0',
+      }}>
+        {/* Decorative blur */}
+        <div style={{
+          position: 'absolute', top: '-100px', right: '-80px',
+          width: '320px', height: '320px', borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(184,134,11,0.06) 0%, transparent 70%)',
+          filter: 'blur(60px)', pointerEvents: 'none',
+        }} />
+        <div style={{
+          position: 'absolute', bottom: '-60px', left: '-60px',
+          width: '250px', height: '250px', borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(184,134,11,0.05) 0%, transparent 70%)',
+          filter: 'blur(50px)', pointerEvents: 'none',
+        }} />
+
+        <div style={{ maxWidth: '1120px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
+          <div className="about-section-header" style={{ textAlign: 'center', marginBottom: '64px' }}>
             <div style={{
               display: 'flex', alignItems: 'center', gap: '1rem',
               marginBottom: '1.5rem', justifyContent: 'center',
@@ -169,55 +430,58 @@ export default function About() {
             </div>
             <h2 style={{
               fontFamily: '"Playfair Display", Georgia, serif',
-              fontSize: 'clamp(1.75rem, 4vw, 2.5rem)',
+              fontSize: 'clamp(1.75rem, 4vw, 2.75rem)',
               fontWeight: 400, color: '#1A1A1A', letterSpacing: '-0.01em',
-            }}>Our Core Values</h2>
+              marginBottom: '14px',
+            }}>The Values That <em style={{ color: '#B8860B', fontStyle: 'italic' }}>Guide Us</em></h2>
+            <p style={{ color: '#6B6B6B', maxWidth: '500px', margin: '0 auto', fontSize: '0.95rem', lineHeight: 1.7 }}>
+              Ancient wisdom meets modern compassion — the four pillars of our foundation.
+            </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '24px' }}>
+          <div className="about-grid-4">
             {values.map((v, i) => (
-              <div
-                key={v.title}
-                style={{
-                  background: '#FFFFFF',
-                  borderRadius: '8px',
-                  padding: '36px 28px',
-                  border: '1px solid #E8E4DF',
-                  borderTop: '2px solid #B8860B',
-                  transition: 'all 0.2s ease',
-                }}
-                onMouseEnter={e => {
-                  e.currentTarget.style.boxShadow = '0 4px 12px rgba(26,26,26,0.06)'
-                }}
-                onMouseLeave={e => {
-                  e.currentTarget.style.boxShadow = 'none'
-                }}
-              >
+              <div key={v.title} className="value-card">
+                {/* Number watermark */}
                 <div style={{
+                  position: 'absolute', top: '16px', right: '20px',
                   fontFamily: '"Playfair Display", Georgia, serif',
-                  fontSize: '2rem',
-                  fontWeight: 400,
-                  color: '#B8860B',
-                  opacity: 0.5,
-                  lineHeight: 1,
-                  marginBottom: '16px',
+                  fontSize: '3.5rem', fontWeight: 700,
+                  color: 'rgba(184,134,11,0.05)',
+                  lineHeight: 1, pointerEvents: 'none',
                 }}>{String(i + 1).padStart(2, '0')}</div>
+
+                <div className="value-icon">
+                  {v.icon}
+                </div>
                 <h3 style={{
                   fontFamily: '"Playfair Display", Georgia, serif',
                   fontWeight: 600, fontSize: '1.1rem', color: '#1A1A1A',
-                  marginBottom: '12px', letterSpacing: '-0.01em',
+                  marginBottom: '10px', letterSpacing: '-0.01em',
                 }}>{v.title}</h3>
-                <p style={{ fontSize: '0.875rem', color: '#6B6B6B', lineHeight: 1.8 }}>{v.description}</p>
+                <p style={{ fontSize: '0.85rem', color: '#6B6B6B', lineHeight: 1.8 }}>{v.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ═══ TEAM ═══ */}
-      <section style={{ padding: '100px 24px', position: 'relative', overflow: 'hidden' }}>
+      {/* ═══ OUR TEAM — Redesigned ═══ */}
+      <section ref={teamRef} style={{
+        padding: '110px 24px',
+        position: 'relative',
+        overflow: 'hidden',
+        background: '#FFFFFF',
+      }}>
+        {/* Subtle bg pattern */}
+        <div style={{
+          position: 'absolute', inset: 0, opacity: 0.025,
+          backgroundImage: 'radial-gradient(circle at 1px 1px, #B8860B 0.5px, transparent 0)',
+          backgroundSize: '40px 40px', pointerEvents: 'none',
+        }} />
+
         <div style={{ maxWidth: '1024px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
-          <div style={{ textAlign: 'center', marginBottom: '56px' }}>
+          <div className="about-section-header" style={{ textAlign: 'center', marginBottom: '64px' }}>
             <div style={{
               display: 'flex', alignItems: 'center', gap: '1rem',
               marginBottom: '1.5rem', justifyContent: 'center',
@@ -233,54 +497,62 @@ export default function About() {
             </div>
             <h2 style={{
               fontFamily: '"Playfair Display", Georgia, serif',
-              fontSize: 'clamp(1.75rem, 4vw, 2.5rem)',
+              fontSize: 'clamp(1.75rem, 4vw, 2.75rem)',
               fontWeight: 400, color: '#1A1A1A', letterSpacing: '-0.01em',
-            }}>The People Behind the Mission</h2>
-            <p style={{ color: '#6B6B6B', marginTop: '12px' }}>Passionate individuals united by one purpose</p>
+              marginBottom: '14px',
+            }}>The People Behind the <em style={{ color: '#B8860B', fontStyle: 'italic' }}>Mission</em></h2>
+            <p style={{ color: '#6B6B6B', maxWidth: '460px', margin: '0 auto', fontSize: '0.95rem', lineHeight: 1.7 }}>
+              Passionate individuals united by one purpose — uplifting lives.
+            </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '24px' }}>
+          <div className="about-grid-4">
             {team.map((member) => (
-              <div
-                key={member.name}
-                style={{
-                  background: '#FFFFFF',
-                  borderRadius: '8px',
-                  padding: '36px 24px',
-                  textAlign: 'center',
-                  border: '1px solid #E8E4DF',
-                  transition: 'all 0.2s ease',
-                }}
-                onMouseEnter={e => {
-                  e.currentTarget.style.boxShadow = '0 4px 12px rgba(26,26,26,0.06)'
-                }}
-                onMouseLeave={e => {
-                  e.currentTarget.style.boxShadow = 'none'
-                }}
-              >
+              <div key={member.name} className="team-card">
+                {/* Decorative accent circle behind avatar */}
                 <div style={{
-                  width: '68px', height: '68px', borderRadius: '50%',
-                  background: '#F5F3F0',
-                  border: '1px solid #E8E4DF',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  fontSize: '1.5rem', fontWeight: 400, color: '#B8860B',
-                  margin: '0 auto 20px',
-                  fontFamily: '"Playfair Display", Georgia, serif',
-                }}>
-                  {member.initial}
+                  position: 'absolute', top: '-30px', left: '50%', transform: 'translateX(-50%)',
+                  width: '120px', height: '120px', borderRadius: '50%',
+                  background: 'radial-gradient(circle, rgba(184,134,11,0.04) 0%, transparent 70%)',
+                  pointerEvents: 'none',
+                }} />
+
+                <div className="team-avatar">
+                  <img 
+                    src={member.image} 
+                    alt={member.name} 
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      borderRadius: '50%'
+                    }}
+                  />
                 </div>
+
                 <h3 style={{
                   fontFamily: '"Playfair Display", Georgia, serif',
-                  fontWeight: 600, fontSize: '1.05rem', color: '#1A1A1A',
-                  marginBottom: '4px',
+                  fontWeight: 600, fontSize: '1.1rem', color: '#1A1A1A',
+                  marginBottom: '6px',
                 }}>{member.name}</h3>
+
                 <p style={{
                   fontFamily: '"IBM Plex Mono", monospace',
-                  fontSize: '0.65rem', fontWeight: 500,
+                  fontSize: '0.6rem', fontWeight: 500,
                   letterSpacing: '0.12em', textTransform: 'uppercase',
-                  color: '#B8860B', marginBottom: '14px',
-                }}>{member.role}</p>
-                <p style={{ fontSize: '0.85rem', color: '#6B6B6B', lineHeight: 1.7 }}>{member.bio}</p>
+                  color: '#B8860B', marginBottom: '16px',
+                  display: 'inline-flex', alignItems: 'center', gap: '6px',
+                }}>
+                  <span style={{
+                    width: '16px', height: '1px', background: '#B8860B', opacity: 0.4,
+                  }} />
+                  <span className="team-role">{member.role}</span>
+                  <span style={{
+                    width: '16px', height: '1px', background: '#B8860B', opacity: 0.4,
+                  }} />
+                </p>
+
+                <p style={{ fontSize: '0.85rem', color: '#6B6B6B', lineHeight: 1.75 }}>{member.bio}</p>
               </div>
             ))}
           </div>

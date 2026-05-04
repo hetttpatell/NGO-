@@ -9,11 +9,22 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer style={{ background: '#1A1A1A', color: '#FFFFFF', position: 'relative' }}>
-      {/* Top rule — thin gold accent */}
-      <div style={{ height: '1px', background: 'linear-gradient(90deg, transparent, #B8860B, transparent)' }} />
+    <footer style={{ position: 'relative', color: '#FFFFFF', overflow: 'hidden' }}>
+      {/* Background Image */}
+      <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
+        <img 
+          src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=1920&q=80" 
+          alt="" 
+          aria-hidden="true"
+          style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+        />
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(15,12,8,0.98) 0%, rgba(26,26,26,0.92) 100%)' }} />
+      </div>
 
-      <div style={{ maxWidth: '1024px', margin: '0 auto', padding: '64px 24px 40px' }}>
+      {/* Top rule — thin gold accent */}
+      <div style={{ position: 'relative', zIndex: 1, height: '1px', background: 'linear-gradient(90deg, transparent, rgba(184,134,11,0.5), transparent)' }} />
+
+      <div style={{ position: 'relative', zIndex: 1, maxWidth: '1024px', margin: '0 auto', padding: '80px 24px 40px' }}>
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
@@ -32,7 +43,7 @@ export default function Footer() {
                 lineHeight: 1.2,
                 marginBottom: '4px',
               }}>
-                <span style={{ color: '#B8860B' }}>श्री</span>कृष्ण NGO
+                <span style={{ color: '#B8860B' }}>Shree Sneh</span> Foundation
               </div>
               <div style={{
                 fontFamily: '"IBM Plex Mono", monospace',
@@ -110,9 +121,9 @@ export default function Footer() {
             }}>Contact Us</h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {[
-                { label: 'Email', text: 'contact@shreekrishna-ngo.org' },
-                { label: 'Phone', text: '+91 98765 43210' },
-                { label: 'Address', text: 'Rural Dev. Center, UP 221001' },
+                { label: 'Email', text: 'contact@shreesnehfoundation.org' },
+                { label: 'Phone', text: '+91 9879794198' },
+                { label: 'Address', text: 'Manekchowk, Ahmedabad 380001' },
                 { label: 'Hours', text: 'Mon–Sat: 9 AM – 6 PM' },
               ].map((item) => (
                 <div key={item.label}>
@@ -187,7 +198,7 @@ export default function Footer() {
           gap: '12px',
         }}>
           <p style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.3)' }}>
-            © {new Date().getFullYear()} Shreekrishna NGO Foundation. All rights reserved.
+            © {new Date().getFullYear()} Shree Sneh Foundation. All rights reserved.
           </p>
           <p style={{
             fontSize: '0.75rem',

@@ -43,9 +43,20 @@ export default function ImpactCounter() {
     <section style={{
       position: 'relative',
       overflow: 'hidden',
-      padding: '100px 24px',
+      padding: '120px 24px',
       background: '#1A1A1A',
     }}>
+      {/* Background Image */}
+      <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
+        <img 
+          src="https://images.unsplash.com/photo-1542810634-71277d95dcbb?auto=format&fit=crop&w=1920&q=80" 
+          alt="" 
+          aria-hidden="true"
+          style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+        />
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(26,26,26,0.92) 0%, rgba(26,26,26,0.85) 100%)' }} />
+      </div>
+
       {/* Ambient gold glow */}
       <div style={{
         position: 'absolute',
@@ -55,8 +66,9 @@ export default function ImpactCounter() {
         borderRadius: '50%',
         background: '#B8860B',
         filter: 'blur(200px)',
-        opacity: 0.04,
+        opacity: 0.15,
         pointerEvents: 'none',
+        zIndex: 0,
       }} />
 
       <div style={{ maxWidth: '1024px', margin: '0 auto', position: 'relative', zIndex: 1 }}>

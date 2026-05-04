@@ -5,9 +5,20 @@ export default function SectionCTA({ title, description, buttonText, buttonLink 
     <section style={{
       position: 'relative',
       overflow: 'hidden',
-      padding: '120px 24px',
+      padding: '140px 24px',
       background: '#1A1A1A',
     }}>
+      {/* Background Image */}
+      <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
+        <img 
+          src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1920&auto=format&fit=crop" 
+          alt="" 
+          aria-hidden="true"
+          style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+        />
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(26,26,26,0.95) 0%, rgba(26,26,26,0.8) 100%)' }} />
+      </div>
+
       {/* Ambient glow */}
       <div style={{
         position: 'absolute',
@@ -17,8 +28,9 @@ export default function SectionCTA({ title, description, buttonText, buttonLink 
         borderRadius: '50%',
         background: '#B8860B',
         filter: 'blur(160px)',
-        opacity: 0.05,
+        opacity: 0.15,
         pointerEvents: 'none',
+        zIndex: 0,
       }} />
 
       <div style={{

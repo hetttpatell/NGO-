@@ -27,8 +27,8 @@ export default function Navbar() {
       style={{
         position: 'fixed', top: 0, left: 0, right: 0, zIndex: 50,
         transition: 'all 0.4s cubic-bezier(0.4,0,0.2,1)',
-        background: scrolled ? 'rgba(250,250,248,0.97)' : 'transparent',
-        backdropFilter: scrolled ? 'blur(16px)' : 'none',
+        background: scrolled ? 'rgba(250,250,248,0.97)' : 'rgba(15,12,8,0.3)',
+        backdropFilter: scrolled ? 'blur(16px)' : 'blur(8px)',
         borderBottom: scrolled ? '1px solid #E8E4DF' : '1px solid transparent',
       }}
     >
@@ -36,27 +36,31 @@ export default function Navbar() {
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '72px' }}>
 
           {/* Logo */}
-          <Link to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <Link to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '16px' }}>
             <div style={{
-              fontFamily: '"Playfair Display", Georgia, serif',
+              fontFamily: '"Noto Sans Devanagari", sans-serif',
               fontWeight: 700,
-              fontSize: '1.25rem',
-              color: '#1A1A1A',
+              fontSize: '1.5rem',
               lineHeight: 1,
-              letterSpacing: '-0.01em',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '2px'
             }}>
-              <span style={{ color: '#B8860B' }}>श्री</span>कृष्ण
+              <span style={{ color: scrolled ? '#B8860B' : '#D4A84B' }}>श्री</span>
+              <span style={{ color: scrolled ? '#1A1A1A' : '#FFFFFF' }}>कृष्ण</span>
             </div>
             <div style={{
               fontFamily: '"IBM Plex Mono", monospace',
               fontSize: '0.6rem',
               fontWeight: 500,
               letterSpacing: '0.15em',
-              color: '#6B6B6B',
               textTransform: 'uppercase',
-              borderLeft: '1px solid #E8E4DF',
-              paddingLeft: '12px',
-            }}>NGO Foundation</div>
+              color: scrolled ? '#6B6B6B' : 'rgba(255,255,255,0.6)',
+              borderLeft: scrolled ? '1px solid #E8E4DF' : '1px solid rgba(255,255,255,0.25)',
+              paddingLeft: '16px',
+            }}>
+              NGO Foundation
+            </div>
           </Link>
 
           {/* Desktop Nav */}
@@ -74,15 +78,15 @@ export default function Navbar() {
                     letterSpacing: '0.03em',
                     textDecoration: 'none',
                     transition: 'color 0.2s ease',
-                    color: isActive ? '#B8860B' : '#1A1A1A',
-                    borderBottom: isActive ? '1.5px solid #B8860B' : '1.5px solid transparent',
+                    color: isActive ? '#D4A84B' : (scrolled ? '#1A1A1A' : '#FFFFFF'),
+                    borderBottom: isActive ? '1.5px solid #D4A84B' : '1.5px solid transparent',
                     fontFamily: '"Source Sans 3", system-ui, sans-serif',
                   }}
                   onMouseEnter={e => {
-                    if (!isActive) e.currentTarget.style.color = '#B8860B'
+                    if (!isActive) e.currentTarget.style.color = '#D4A84B'
                   }}
                   onMouseLeave={e => {
-                    if (!isActive) e.currentTarget.style.color = '#1A1A1A'
+                    if (!isActive) e.currentTarget.style.color = scrolled ? '#1A1A1A' : '#FFFFFF'
                   }}
                 >
                   {link.label}
@@ -134,7 +138,7 @@ export default function Navbar() {
             className="show-mobile"
             aria-label="Toggle menu"
           >
-            <svg width="24" height="24" fill="none" stroke="#1A1A1A" viewBox="0 0 24 24">
+            <svg width="24" height="24" fill="none" stroke={scrolled ? '#1A1A1A' : '#FFFFFF'} viewBox="0 0 24 24">
               {isOpen ? (
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
               ) : (

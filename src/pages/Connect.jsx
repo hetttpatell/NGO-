@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import AmbientGlow from '../components/BlurShape'
 
 const waysToHelp = [
   { title: 'Volunteer', description: 'Join our on-ground team and directly impact lives through teaching, meal distribution, or elder care visits.' },
@@ -30,17 +29,46 @@ export default function Connect() {
 
   return (
     <>
-      <section style={{ position: 'relative', padding: 'clamp(120px, 15vw, 180px) 24px 80px', overflow: 'hidden' }}>
-        <AmbientGlow color="#B8860B" size="500px" position={{ top: '-200px', left: '-100px' }} opacity={0.02} />
-        <div style={{ maxWidth: '1024px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
-          <div style={{ fontFamily: '"IBM Plex Mono", monospace', fontSize: '0.7rem', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#B8860B', marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <span style={{ width: '32px', height: '1px', background: '#B8860B' }} />
+      <section style={{
+        position: 'relative',
+        minHeight: '60vh',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        padding: '160px 24px 80px',
+        overflow: 'hidden',
+      }}>
+        {/* Background Image */}
+        <div style={{
+          position: 'absolute', inset: 0, zIndex: 0,
+        }}>
+          <img
+            src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?q=80&w=1920&auto=format&fit=crop"
+            alt=""
+            aria-hidden="true"
+            style={{
+              width: '100%', height: '100%',
+              objectFit: 'cover', objectPosition: 'center 40%',
+              display: 'block',
+            }}
+          />
+          {/* Gradient Overlay */}
+          <div style={{
+            position: 'absolute', inset: 0,
+            background: 'linear-gradient(to bottom, rgba(15,12,8,0.75) 0%, rgba(15,12,8,0.6) 40%, rgba(15,12,8,0.85) 100%)',
+          }} />
+        </div>
+
+        <div style={{ maxWidth: '1024px', margin: '0 auto', position: 'relative', zIndex: 1, width: '100%', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <div style={{ fontFamily: '"IBM Plex Mono", monospace', fontSize: '0.7rem', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.6)', marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <span style={{ width: '32px', height: '1px', background: 'rgba(255,255,255,0.25)' }} />
             Join the Mission
+            <span style={{ width: '32px', height: '1px', background: 'rgba(255,255,255,0.25)' }} />
           </div>
-          <h1 style={{ fontFamily: '"Playfair Display", Georgia, serif', fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 400, color: '#1A1A1A', lineHeight: 1.15, marginBottom: '24px', letterSpacing: '-0.02em' }}>
-            Connect <em style={{ color: '#B8860B' }}>With Us</em>
+          <h1 style={{ fontFamily: '"Playfair Display", Georgia, serif', fontSize: 'clamp(2.5rem, 6vw, 4rem)', fontWeight: 400, color: '#FFFFFF', lineHeight: 1.15, marginBottom: '24px', maxWidth: '800px', letterSpacing: '-0.02em' }}>
+            Connect <em style={{ color: '#D4A84B', fontStyle: 'italic' }}>With Us</em>
           </h1>
-          <p style={{ fontSize: '1.05rem', color: '#6B6B6B', lineHeight: 1.8, maxWidth: '540px' }}>
+          <p style={{ fontSize: '1.15rem', color: 'rgba(255,255,255,0.8)', lineHeight: 1.8, maxWidth: '600px', fontFamily: '"Source Sans 3", system-ui, sans-serif' }}>
             Whether you want to volunteer, donate, or simply learn more — we would love to hear from you.
           </p>
         </div>
@@ -140,9 +168,9 @@ export default function Connect() {
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', marginBottom: '40px' }}>
                 {[
-                  { label: 'Email', value: 'contact@shreekrishna-ngo.org', sub: 'For general inquiries' },
-                  { label: 'Phone', value: '+91 98765 43210', sub: 'Mon–Sat, 9 AM – 6 PM' },
-                  { label: 'Address', value: 'Shreekrishna Rural Development Center\nVillage Panchayat Road, Block 3\nUttar Pradesh – 221001' },
+                  { label: 'Email', value: 'contact@shreesnehfoundation.org', sub: 'For general inquiries' },
+                  { label: 'Phone', value: '+91 9879794198', sub: 'Mon–Sat, 9 AM – 6 PM' },
+                  { label: 'Address', value: '1445, Piplawalo Khancho,\nSheth Ni Pole, Mandvi Ni Pole,\nManekchowk, Ahmedabad-380001.' },
                   { label: 'Office Hours', value: 'Monday – Saturday: 9 AM – 6 PM', sub: 'Emergency helpline available Sundays' },
                 ].map(item => (
                   <div key={item.label} style={{ paddingBottom: '20px', borderBottom: '1px solid #E8E4DF' }}>
@@ -158,7 +186,7 @@ export default function Connect() {
                 <h3 style={{ fontFamily: '"Playfair Display", Georgia, serif', fontWeight: 600, fontSize: '1rem', color: '#1A1A1A', marginBottom: '16px' }}>Bank Details for Donation</h3>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                   {[
-                    ['Account Name', 'Shreekrishna NGO Foundation'],
+                    ['Account Name', 'Shree Sneh Foundation'],
                     ['Account No.', '1234 5678 9012'],
                     ['IFSC Code', 'SBIN0001234'],
                     ['Bank', 'State Bank of India'],

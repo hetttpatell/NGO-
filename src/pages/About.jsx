@@ -52,52 +52,52 @@ const team = [
     image: '/Dwanipanchal.png'
   },
   {
-    name: 'Priya Patel',
-    role: 'Program Coordinator',
-    bio: 'Social worker with 15 years of experience in community development and hunger relief programs.',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80'
+    name: 'Hardik Shah',
+    role: 'Management Head & Executer',
+    bio: 'I believe that every small step can bring a big change in someone\'s life.I am here to do my bit for the society with my team.I am looking forward to gain a lot of love and support from all of you to make this initiative a success.',
+    image: '/hardik.png'
   },
-  {
-    name: 'Amit Verma',
-    role: 'Elder Care Lead',
-    bio: 'Geriatric care specialist ensuring dignity and comfort for every elder in our support network.',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80'
-  },
-  {
-    name: 'Sunita Devi',
-    role: 'Education Officer',
-    bio: 'Former village schoolteacher who now oversees education programs across 50+ villages.',
-    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80'
-  },
+  // {
+  //   name: 'Amit Verma',
+  //   role: 'Elder Care Lead',
+  //   bio: 'Geriatric care specialist ensuring dignity and comfort for every elder in our support network.',
+  //   image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80'
+  // },
+  // {
+  //   name: 'Sunita Devi',
+  //   role: 'Education Officer',
+  //   bio: 'Former village schoolteacher who now oversees education programs across 40+ villages.',
+  //   image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80'
+  // },
 ]
 
 const wwdItems = [
   {
     title: 'Hunger Relief',
-    desc: 'Daily meal programs nourishing families across 50+ villages with dignity and care.',
+    desc: 'Daily meal programs nourishing families across 5+ villages with dignity and care.',
     img: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80',
-    stat: '5,000+',
-    statLabel: 'Meals Served Monthly',
+    stat: '55+',
+    statLabel: 'Meals Served Weekly',
   },
   {
     title: 'Education',
     desc: 'Free education centers empowering children with knowledge and equal opportunity.',
     img: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80',
-    stat: '1,200+',
+    stat: '50+',
     statLabel: 'Students Enrolled',
   },
   {
     title: 'Elder Care',
     desc: 'Compassionate support ensuring our elders live with dignity, comfort, and belonging.',
     img: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80',
-    stat: '200+',
+    stat: '45+',
     statLabel: 'Seniors Supported',
   },
   {
     title: 'Orphan Shelter',
     desc: 'A loving home for children without families — giving them safety, warmth, and hope.',
     img: 'https://images.unsplash.com/photo-1594608661623-aa0bd3a69d98?auto=format&fit=crop&w=800&q=80',
-    stat: '40+',
+    stat: '35+',
     statLabel: 'Children Sheltered',
   },
 ]
@@ -222,8 +222,8 @@ export default function About() {
             maxWidth: '600px',
             fontFamily: '"Source Sans 3", system-ui, sans-serif',
           }}>
-            Born from a simple act of kindness in a small Uttar Pradesh village,
-            Shree Sneh Foundation has grown into a beacon of hope for thousands across rural India.
+            Born from a simple act of kindness in Ahmedabad, Gujarat,
+            Shree Sneh Foundation has grown into a beacon of hope for communities across Gujarat.
           </p>
         </div>
       </section>
@@ -255,8 +255,8 @@ export default function About() {
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
                 {[
-                  'In 2015, a group of young professionals from a small village in Uttar Pradesh witnessed children walking over 5 kilometers just to reach the nearest school. They saw elders living alone without medical care, and families struggling to afford a single meal a day.',
-                  'Moved by these realities and inspired by the teachings of Lord Krishna — particularly the principle of Nishkama Karma (selfless action) — they decided to act. What began as a small community kitchen feeding 20 families has evolved into a multi-faceted organization touching lives across 50+ villages.',
+                  'In 2022, a group of young professionals from Ahmedabad, Gujarat witnessed children walking long distances just to reach the nearest school. They saw elders living alone without medical care, and families struggling to afford a single meal a day.',
+                  'Moved by these realities and inspired by the teachings of Lord Krishna — particularly the principle of Nishkama Karma (selfless action) — they decided to act. What began as a small community kitchen feeding 20 families has evolved into a multi-faceted organization touching lives across 5+ villages.',
                   'Today, Shree Sneh Foundation runs education centers, daily meal programs, elder care facilities, and orphan shelters — all driven by the belief that compassion can transform communities.',
                 ].map((para, i) => (
                   <p key={i} style={{ fontSize: '0.95rem', color: '#6B6B6B', lineHeight: 1.9 }}>{para}</p>
@@ -280,11 +280,11 @@ export default function About() {
               </div>
 
               {[
-                { year: '2015', event: 'Founded with a community kitchen serving 20 families' },
-                { year: '2017', event: 'Launched first free education center in 3 villages' },
-                { year: '2019', event: 'Expanded elder care program to 200+ seniors' },
-                { year: '2021', event: 'Opened first orphan shelter with 40 children' },
-                { year: '2024', event: 'Now serving 50+ villages across Uttar Pradesh' },
+                { year: '2022', event: 'Founded with a community kitchen serving 20 families' },
+                { year: '2023', event: 'Launched first free education center in 3 villages' },
+                { year: '2024', event: 'Officially registered as Shree Sneh Foundation' },
+                { year: '2025', event: 'Expanded elder care to support 45+ seniors' },
+                { year: '2026', event: 'Now serving 5+ villages across Ahmedabad and surrounding areas' },
               ].map((item, i) => (
                 <div key={item.year} style={{
                   display: 'flex', gap: '20px',
@@ -345,7 +345,7 @@ export default function About() {
               marginBottom: '16px',
             }}>Transforming Lives Through <em style={{ color: '#D4A84B', fontStyle: 'italic' }}>Action</em></h2>
             <p style={{ color: 'rgba(255,255,255,0.55)', maxWidth: '540px', margin: '0 auto', fontSize: '1rem', lineHeight: 1.7 }}>
-              Four pillars of service that drive our mission to uplift communities across rural India.
+              Four pillars of service that drive our mission to uplift communities across Gujarat.
             </p>
           </div>
 

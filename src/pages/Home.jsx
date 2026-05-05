@@ -13,7 +13,7 @@ const initiatives = [
     longDescription: 'We believe every child deserves the gift of knowledge. Our education programs provide free schooling, learning materials, uniforms, and mentorship to children who would otherwise never see the inside of a classroom.',
     image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80',
     icon: 'M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253',
-    stat: '500+',
+    stat: '50+',
     statLabel: 'Children Educated',
     color: '#D4A84B',
   },
@@ -24,8 +24,8 @@ const initiatives = [
     longDescription: 'No one should go to bed hungry. Our hunger relief drives serve hot, nutritious meals daily across villages, ensuring that children can focus on learning and families can focus on rebuilding their lives.',
     image: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1200&q=80',
     icon: 'M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z',
-    stat: '10K+',
-    statLabel: 'Meals Monthly',
+    stat: '55+',
+    statLabel: 'Meals Weekly',
     color: '#C97B3A',
   },
   {
@@ -35,7 +35,7 @@ const initiatives = [
     longDescription: 'Our elders built the world we live in. We provide medical check-ups, daily care, emotional companionship, and a home filled with warmth for those who have been abandoned or forgotten.',
     image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80',
     icon: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z',
-    stat: '200+',
+    stat: '45+',
     statLabel: 'Elders Cared For',
     color: '#A67C52',
   },
@@ -46,7 +46,7 @@ const initiatives = [
     longDescription: 'Every orphaned child deserves a chance at life filled with love. We provide safe shelter, nutrition, education, and emotional support — building a family where there was none.',
     image: 'https://images.unsplash.com/photo-1594608661623-aa0bd3a69d98?auto=format&fit=crop&w=1200&q=80',
     icon: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z',
-    stat: '150+',
+    stat: '35+',
     statLabel: 'Children Sheltered',
     color: '#B8860B',
   },
@@ -373,7 +373,7 @@ export default function Home() {
             }}
           >
             Empowering{' '}
-            <em style={{ color: '#D4A84B', fontStyle: 'italic' }}>Rural India</em>
+            <em style={{ color: '#D4A84B', fontStyle: 'italic' }}>Ahmedabad</em>
             <br />with Compassion & Care
           </h1>
 
@@ -462,9 +462,9 @@ export default function Home() {
             justifyContent: 'center', width: '100%', maxWidth: '700px',
           }}>
             {[
-              { num: '500+', label: 'Children Educated', icon: 'M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253' },
-              { num: '10K+', label: 'Meals Monthly', icon: 'M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z' },
-              { num: '50+', label: 'Villages Reached', icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z' },
+              { num: '50+', label: 'Children Educated', icon: 'M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253' },
+              { num: '55+', label: 'Meals Weekly', icon: 'M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z' },
+              { num: '5+', label: 'Villages Reached', icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z' },
             ].map((stat) => (
               <div key={stat.label} style={{
                 flex: '1 1 180px',
@@ -589,7 +589,7 @@ export default function Home() {
             <em style={{ color: '#D4A84B', fontFamily: '"Playfair Display", Georgia, serif', fontStyle: 'italic' }}>
               "Perform your duty selflessly, without attachment"
             </em>{' '}
-            — we serve the most vulnerable in rural India. Every child deserves education,
+            — we serve the most vulnerable in and around Ahmedabad. Every child deserves education,
             every elder deserves dignity, and no one should sleep hungry.
           </p>
 

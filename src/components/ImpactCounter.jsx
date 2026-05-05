@@ -32,10 +32,10 @@ function AnimatedNumber({ target, suffix = '' }) {
 }
 
 const stats = [
-  { value: 500, suffix: '+', label: 'Children Educated' },
-  { value: 10000, suffix: '+', label: 'Meals Served' },
-  { value: 200, suffix: '+', label: 'Elders Supported' },
-  { value: 50, suffix: '+', label: 'Villages Reached' },
+  { value: 50, suffix: '+', label: 'Children Educated' },
+  { value: 60, suffix: '+', label: 'Meals Served Weekly' },
+  { value: 45, suffix: '+', label: 'Elders Supported' },
+  { value: 5, suffix: '+', label: 'Villages Reached' },
 ]
 
 export default function ImpactCounter() {

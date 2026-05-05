@@ -12,11 +12,11 @@ export default function Footer() {
     <footer style={{ position: 'relative', color: '#FFFFFF', overflow: 'hidden' }}>
       {/* Background Image */}
       <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
-        <img 
-          src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=1920&q=80" 
-          alt="" 
+        <img
+          src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=1920&q=80"
+          alt=""
           aria-hidden="true"
-          style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
         />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(15,12,8,0.98) 0%, rgba(26,26,26,0.92) 100%)' }} />
       </div>
@@ -121,7 +121,7 @@ export default function Footer() {
             }}>Contact Us</h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {[
-                { label: 'Email', text: 'contact@shreesnehfoundation.org' },
+                { label: 'Email', text: 'srisnehfoundation@gmail.com' },
                 { label: 'Phone', text: '+91 9879794198' },
                 { label: 'Address', text: 'Manekchowk, Ahmedabad 380001' },
                 { label: 'Hours', text: 'Mon–Sat: 9 AM – 6 PM' },
@@ -154,7 +154,7 @@ export default function Footer() {
               marginBottom: '24px',
             }}>Make a Difference</h4>
             <p style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.8, marginBottom: '24px' }}>
-              Every rupee, every hour creates a ripple of change across rural India.
+              Every rupee, every hour creates a ripple of change across Ahmedabad and surrounding areas.
             </p>
             <Link
               to="/connect"
@@ -206,7 +206,7 @@ export default function Footer() {
             fontFamily: '"Playfair Display", Georgia, serif',
             fontStyle: 'italic',
           }}>
-            For rural India, with love
+            For Gujarat, with love
           </p>
         </div>
       </div>

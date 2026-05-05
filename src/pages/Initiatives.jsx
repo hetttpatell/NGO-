@@ -11,11 +11,11 @@ const initiatives = [
     title: 'Education for All',
     tagline: 'Lighting the path of knowledge',
     description: 'We believe education is the most powerful tool for breaking the cycle of poverty. Our education initiative provides free schooling, books, uniforms, and school supplies to children in rural villages who otherwise have no access to learning.',
-    highlights: ['Free learning centers in 30+ villages', 'School supplies & uniforms distributed', 'After-school tutoring programs', 'Digital literacy workshops for youth'],
+    highlights: ['Free learning centers in 5+ villages', 'School supplies & uniforms distributed', 'After-school tutoring programs', 'Digital literacy workshops for youth'],
     metrics: [
-      { label: 'Students', value: '2,500+' },
-      { label: 'Centers', value: '34' },
-      { label: 'Literacy', value: '+45%' }
+      { label: 'Students', value: '50+' },
+      { label: 'Centers', value: '5' },
+      { label: 'Literacy', value: '+25%' }
     ],
     impactStory: "Rahul, a 12-year-old from a small hamlet, is now the first in his family to read and write, aspiring to be a teacher one day.",
     image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=800&auto=format&fit=crop',
@@ -23,12 +23,12 @@ const initiatives = [
   {
     title: 'Hunger Relief Program',
     tagline: 'No one should sleep hungry',
-    description: 'Our hunger relief program serves nutritious meals daily to children, elderly, and families facing food insecurity. We operate community kitchens and distribute food packets across 15 key locations to combat chronic malnutrition.',
-    highlights: ['10,000+ meals served monthly', 'Community kitchens in 15 locations', 'Nutritional supplements for children', 'Emergency food relief during crises'],
+    description: 'Our hunger relief program serves nutritious meals daily to children, elderly, and families facing food insecurity. We operate community kitchens and distribute food packets across 5 key locations to combat chronic malnutrition.',
+    highlights: ['55+ meals served weekly', 'Community kitchens in 5 locations', 'Nutritional supplements for children', 'Emergency food relief during crises'],
     metrics: [
-      { label: 'Meals Served', value: '120K+' },
-      { label: 'Daily Feed', value: '400+' },
-      { label: 'locations', value: '15' }
+      { label: 'Meals Served', value: '55+' },
+      { label: 'Daily Feed', value: '45+' },
+      { label: 'Locations', value: '5' }
     ],
     impactStory: "Our community kitchen has become a lifeline for elderly residents, providing not just food but a sense of belonging.",
     image: 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?q=80&w=800&auto=format&fit=crop',
@@ -36,10 +36,10 @@ const initiatives = [
   {
     title: 'Elder Care Initiative',
     tagline: 'Dignity in every sunset',
-    description: 'Many elders in rural India live alone, abandoned without support. Our elder care initiative provides medical assistance, daily meals, companionship visits, and a safe space to live with dignity and respect.',
-    highlights: ['Medical check-ups & medicine distribution', 'Daily meal delivery to 200+ elders', 'Companionship & counseling services', 'Assisted living support programs'],
+    description: 'Many elders in our communities live alone, abandoned without support. Our elder care initiative provides medical assistance, daily meals, companionship visits, and a safe space to live with dignity and respect.',
+    highlights: ['Medical check-ups & medicine distribution', 'Daily meal delivery to 45+ elders', 'Companionship & counseling services', 'Assisted living support programs'],
     metrics: [
-      { label: 'Elders', value: '500+' },
+      { label: 'Elders', value: '45+' },
       { label: 'Medical', value: 'Weekly' },
       { label: 'Visits', value: 'Daily' }
     ],
@@ -52,9 +52,9 @@ const initiatives = [
     description: 'Our orphan support program creates a nurturing environment for children who have lost their parents. We provide shelter, education, emotional support, and life skills training to help them build a bright future.',
     highlights: ['Safe shelter with caring staff', 'Full education sponsorship', 'Emotional & psychological support', 'Vocational training for older youth'],
     metrics: [
-      { label: 'Children', value: '120' },
+      { label: 'Children', value: '35' },
       { label: 'Success', value: '100%' },
-      { label: 'Ratio', value: '12:1' }
+      { label: 'Ratio', value: '5:1' }
     ],
     impactStory: "Young Amit has transformed from a shy child to a confident student who recently won his school's science fair.",
     image: 'https://images.unsplash.com/photo-1502781252888-9143ba7f074e?q=80&w=800&auto=format&fit=crop',

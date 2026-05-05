@@ -192,7 +192,7 @@ export default function Connect() {
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', marginBottom: '40px' }}>
                 {[
-                  { label: 'Email', value: 'contact@shreesnehfoundation.org', sub: 'For general inquiries' },
+                  { label: 'Email', value: 'srisnehfoundation@gmail.com', sub: 'For general inquiries' },
                   { label: 'Phone', value: '+91 9879794198', sub: 'Mon–Sat, 9 AM – 6 PM' },
                   { label: 'Address', value: '1445, Piplawalo Khancho,\nSheth Ni Pole, Mandvi Ni Pole,\nManekchowk, Ahmedabad-380001.' },
                   { label: 'Office Hours', value: 'Monday – Saturday: 9 AM – 6 PM', sub: 'Emergency helpline available Sundays' },
@@ -206,14 +206,16 @@ export default function Connect() {
               </div>
 
               {/* Bank Details */}
-              {/* <div style={{ background: '#F5F3F0', border: '1px solid #E8E4DF', borderRadius: '8px', padding: '28px' }}>
+              <div style={{ background: '#F5F3F0', border: '1px solid #E8E4DF', borderRadius: '8px', padding: '28px' }}>
                 <h3 style={{ fontFamily: '"Playfair Display", Georgia, serif', fontWeight: 600, fontSize: '1rem', color: '#1A1A1A', marginBottom: '16px' }}>Bank Details for Donation</h3>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                   {[
-                    ['Account Name', 'Shree Sneh Foundation'],
-                    ['Account No.', '1234 5678 9012'],
-                    ['IFSC Code', 'SBIN0001234'],
-                    ['Bank', 'State Bank of India'],
+                    ['Account Name', 'SHREE SNEH FOUNDATION'],
+                    ['Account No.', '208820110000004'],
+                    ['Account Type', ' Current '],
+                    ['Branch', ' Sindhubhavan '],
+                    ['IFSC Code', 'BKID0002088'],
+                    ['Bank', 'Bank of India'],
                   ].map(([k, v]) => (
                     <div key={k} style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem' }}>
                       <span style={{ color: '#6B6B6B' }}>{k}</span>
@@ -221,7 +223,34 @@ export default function Connect() {
                     </div>
                   ))}
                 </div>
-              </div> */}
+              </div>
+
+              {/* Legal & Registration Details */}
+              <div style={{ background: '#FFFBF2', border: '1px solid #E8E4DF', borderLeft: '3px solid #B8860B', borderRadius: '8px', padding: '28px', marginTop: '20px' }}>
+                <h3 style={{ fontFamily: '"Playfair Display", Georgia, serif', fontWeight: 600, fontSize: '1rem', color: '#1A1A1A', marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B8860B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
+                  </svg>
+                  Legal &amp; Registration
+                </h3>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                  {[
+                    ['RTA No.', 'ABKTS1664D/002539/24-25/'],
+                    ['80G', 'T-80G'],
+                    ['Dated', '11/09/2024'],
+                    ['Reg. No.', 'ONE GUJ/E/24300/AHMEDABAD'],
+                    ['PAN No.', 'ABKTS1664D'],
+                  ].map(([k, v]) => (
+                    <div key={k} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', fontSize: '0.85rem', gap: '12px' }}>
+                      <span style={{ color: '#6B6B6B', whiteSpace: 'nowrap' }}>{k}</span>
+                      <span style={{ color: '#1A1A1A', fontWeight: 600, textAlign: 'right', letterSpacing: '0.02em' }}>{v}</span>
+                    </div>
+                  ))}
+                </div>
+                <p style={{ fontSize: '0.72rem', color: '#9B9B9B', marginTop: '14px', fontFamily: '"IBM Plex Mono", monospace', letterSpacing: '0.05em' }}>
+                  Donations are eligible for tax exemption under Section 80G of the Income Tax Act.
+                </p>
+              </div>
             </div>
           </div>
         </div>

@@ -32,6 +32,22 @@ export default function Navbar() {
         borderBottom: scrolled ? '1px solid #E8E4DF' : '1px solid transparent',
       }}
     >
+      {/* Donation Ticker Banner */}
+      <div className="ticker-wrap">
+        <div className="ticker-content" style={{ padding: '8px 0' }}>
+          {[...Array(6)].map((_, i) => (
+            <div key={i} className="ticker-item">
+              <span style={{ color: '#B8860B' }}>Support Us:</span>
+              <span>Bank of India | A/C: 208820110000004 | IFSC: BKID0002088</span>
+              <span style={{ color: 'rgba(255,255,255,0.2)', margin: '0 4px' }}>•</span>
+              <span>+91 9879794198</span>
+              <span style={{ color: 'rgba(255,255,255,0.2)', margin: '0 4px' }}>•</span>
+              <span style={{ textTransform: 'lowercase' }}>srisnehfoundation@gmail.com</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
       <nav style={{ maxWidth: '1024px', margin: '0 auto', padding: '0 1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '72px' }}>
 

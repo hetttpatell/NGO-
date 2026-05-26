@@ -49,52 +49,24 @@ export default function Navbar() {
       </div>
 
       <nav style={{ maxWidth: '1024px', margin: '0 auto', padding: '0 1.5rem' }}>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '72px' }}>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            minHeight: '90px',
+            padding: '6px 0'
+          }}
+        >
 
           {/* Logo */}
-          <Link to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0' }}>
-            {/* Vertical divider accent */}
-            <div style={{
-              width: '3px',
-              height: '42px',
-              borderRadius: '2px',
-              background: scrolled
-                ? 'linear-gradient(180deg, #B8860B 0%, #D4A84B 100%)'
-                : 'linear-gradient(180deg, #D4A84B 0%, rgba(212,168,75,0.4) 100%)',
-              marginRight: '14px',
-              flexShrink: 0,
-              transition: 'background 0.4s ease',
-            }} />
-
-            {/* Brand text block */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
-              {/* Line 1: श्री in Devanagari */}
-              <div style={{
-                fontFamily: '"Noto Sans Devanagari", "Mangal", serif',
-                fontWeight: 700,
-                fontSize: '1.35rem',
-                lineHeight: 1,
-                letterSpacing: '0.02em',
-                color: scrolled ? '#B8860B' : '#D4A84B',
-                transition: 'color 0.4s ease',
-              }}>
-                श्री
-              </div>
-              {/* Line 2: Sneh Foundation in English */}
-              <div style={{
-                fontFamily: '"Source Sans 3", system-ui, sans-serif',
-                fontWeight: 600,
-                fontSize: '0.72rem',
-                letterSpacing: '0.18em',
-                textTransform: 'uppercase',
-                color: scrolled ? '#1A1A1A' : 'rgba(255,255,255,0.92)',
-                transition: 'color 0.4s ease',
-                lineHeight: 1,
-              }}>
-                Sneh Foundation
-              </div>
-            </div>
-          </Link>
+          <div className="flex items-center justify-center">
+            <img
+              src="/Logo.png"
+              alt="Shree Sneh Foundation Logo"
+              className="h-18 w-auto object-contain"
+            />
+          </div>
 
           {/* Desktop Nav */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '2px' }} className="hidden-mobile">
@@ -237,6 +209,6 @@ export default function Navbar() {
           </div>
         </div>
       </nav>
-    </header>
+    </header >
   )
 }

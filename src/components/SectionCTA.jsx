@@ -10,11 +10,11 @@ export default function SectionCTA({ title, description, buttonText, buttonLink 
     }}>
       {/* Background Image */}
       <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
-        <img 
-          src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1920&auto=format&fit=crop" 
-          alt="" 
+        <img
+          src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1920&auto=format&fit=crop"
+          alt=""
           aria-hidden="true"
-          style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
         />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(26,26,26,0.95) 0%, rgba(26,26,26,0.8) 100%)' }} />
       </div>

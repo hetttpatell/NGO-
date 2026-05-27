@@ -98,7 +98,7 @@ export default function SectionCTA({ title, description, buttonText, buttonLink 
             </svg>
           </Link>
           <a
-            href="tel:+919876543210"
+            href="tel:+919879794198"
             style={{
               display: 'inline-flex', alignItems: 'center', gap: '8px',
               padding: '14px 28px',

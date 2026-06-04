@@ -27,9 +27,17 @@ const galleryItems = [
 
   // ── Events (awards) ──────────────────────────────────────────────────────
   { id: 'awards-1', src: '/gallery/awards-1.jpeg', tab: 'Events', type: 'image', title: 'Events – 1' },
+
+  // ── Activity ─────────────────────────────────────────────────────────────
+  { id: 'activity-1', src: '/gallery/Activity-01.jpeg', tab: 'Activity', type: 'image', title: 'Activity – 1' },
+  { id: 'activity-2', src: '/gallery/Activity-02.jpeg', tab: 'Activity', type: 'image', title: 'Activity – 2' },
+  { id: 'activity-3', src: '/gallery/Activity-03.jpeg', tab: 'Activity', type: 'image', title: 'Activity – 3' },
+  { id: 'activity-4', src: '/gallery/Activity-04.jpeg', tab: 'Activity', type: 'image', title: 'Activity – 4' },
+  { id: 'activity-5', src: '/gallery/Activity-05.jpeg', tab: 'Activity', type: 'image', title: 'Activity – 5' },
+  { id: 'activity-video-1', src: '/gallery/Activity-video-01.mp4', tab: 'Activity', type: 'video', title: 'Activity Video', poster: '/gallery/Activity-01.jpeg' },
 ]
 
-const TABS = ['All', 'Orphanage', 'Events']
+const TABS = ['All', 'Orphanage', 'Events', 'Activity']
 
 // ─── Tiny play-button SVG overlay for video cards ────────────────────────────
 const PlayIcon = () => (
@@ -42,6 +50,11 @@ const PlayIcon = () => (
 // ─── Lightbox ────────────────────────────────────────────────────────────────
 function Lightbox({ item, onClose, onPrev, onNext }) {
   const boxRef = useRef(null)
+  const [loading, setLoading] = useState(item.type === 'video')
+
+  useEffect(() => {
+    setLoading(item.type === 'video')
+  }, [item])
 
   useEffect(() => {
     gsap.fromTo(boxRef.current, { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, duration: 0.28, ease: 'power2.out' })
@@ -80,12 +93,36 @@ function Lightbox({ item, onClose, onPrev, onNext }) {
       {/* media */}
       <div ref={boxRef} onClick={(e) => e.stopPropagation()} style={{ maxWidth: '90vw', maxHeight: '90vh', position: 'relative' }}>
         {item.type === 'video' ? (
-          <video
-            src={item.src}
-            controls
-            autoPlay
-            style={{ maxWidth: '90vw', maxHeight: '86vh', borderRadius: '10px', display: 'block' }}
-          />
+          <div style={{ position: 'relative', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <video
+              src={item.src}
+              controls
+              autoPlay
+              preload="metadata"
+              playsInline
+              poster={item.poster}
+              onCanPlay={() => setLoading(false)}
+              onWaiting={() => setLoading(true)}
+              onPlaying={() => setLoading(false)}
+              style={{ maxWidth: '90vw', maxHeight: '86vh', borderRadius: '10px', display: 'block', outline: 'none' }}
+            />
+            {loading && (
+              <div style={{
+                position: 'absolute', inset: 0,
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                background: 'rgba(10,8,5,0.4)', borderRadius: '10px',
+                pointerEvents: 'none', zIndex: 10
+              }}>
+                <div style={{
+                  width: '44px', height: '44px',
+                  border: '3px solid rgba(255,255,255,0.3)',
+                  borderTop: '3px solid #D4A84B',
+                  borderRadius: '50%',
+                  animation: 'spin 1s linear infinite'
+                }} />
+              </div>
+            )}
+          </div>
         ) : (
           <img
             src={item.src}
@@ -226,6 +263,10 @@ const gridCss = `
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
       gap: 18px;
     }
+  }
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
   }
 `
 

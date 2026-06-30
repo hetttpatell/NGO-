@@ -383,7 +383,100 @@ export default function Gallery() {
           </div>
 
           {/* Responsive grid: 2-col on mobile, auto-fill on desktop */}
-          <style>{gridCss}</style>
+          <style>{gridCss}{`
+            .cert-banner {
+              display: flex;
+              align-items: center;
+              gap: 24px;
+              padding: 28px 32px;
+              background: linear-gradient(135deg, #FFFBF2 0%, #FFF8E7 100%);
+              border: 1.5px solid #D4A84B;
+              border-radius: 12px;
+              margin-bottom: 40px;
+              cursor: pointer;
+              transition: box-shadow 0.25s ease, transform 0.25s ease;
+              text-decoration: none;
+              color: inherit;
+            }
+            .cert-banner:hover {
+              box-shadow: 0 8px 32px rgba(184,134,11,0.18);
+              transform: translateY(-2px);
+            }
+            @media (max-width: 600px) {
+              .cert-banner {
+                flex-direction: column;
+                text-align: center;
+                padding: 24px 20px;
+                gap: 16px;
+              }
+            }
+          `}</style>
+
+          {/* ── Registration Certificate (Highlighted) ── */}
+          <a
+            href="/gallery/REGISTRATION CERTIFICATE.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cert-banner"
+            id="registration-certificate"
+          >
+            {/* Certificate Icon */}
+            <div style={{
+              flexShrink: 0,
+              width: '64px', height: '64px',
+              background: 'linear-gradient(135deg, #B8860B, #D4A84B)',
+              borderRadius: '12px',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              boxShadow: '0 4px 12px rgba(184,134,11,0.25)',
+            }}>
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <path d="M12 18v-6" />
+                <path d="M9 15l3 3 3-3" />
+              </svg>
+            </div>
+
+            {/* Text */}
+            <div style={{ flex: 1 }}>
+              <div style={{
+                fontFamily: '"IBM Plex Mono", monospace',
+                fontSize: '0.6rem',
+                fontWeight: 500,
+                letterSpacing: '0.15em',
+                textTransform: 'uppercase',
+                color: '#B8860B',
+                marginBottom: '6px',
+              }}>Official Document</div>
+              <div style={{
+                fontFamily: '"Playfair Display", Georgia, serif',
+                fontSize: 'clamp(1.05rem, 2.5vw, 1.3rem)',
+                fontWeight: 600,
+                color: '#1A1A1A',
+                marginBottom: '4px',
+              }}>Registration Certificate</div>
+              <div style={{
+                fontSize: '0.82rem',
+                color: '#6B6B6B',
+                fontFamily: '"Source Sans 3", system-ui, sans-serif',
+              }}>View our officially registered foundation certificate — Shree Sneh Foundation</div>
+            </div>
+
+            {/* Arrow */}
+            <div style={{
+              flexShrink: 0,
+              width: '40px', height: '40px',
+              borderRadius: '50%',
+              border: '1.5px solid #E8E4DF',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              transition: 'border-color 0.2s ease, background 0.2s ease',
+            }}>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B8860B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M7 17l9.2-9.2M17 17V7H7" />
+              </svg>
+            </div>
+          </a>
+
           <div ref={gridRef} className="gallery-grid">
             {filtered.map((item, index) => (
               <div key={item.id} data-card>

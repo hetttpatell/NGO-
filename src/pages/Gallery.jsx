@@ -35,9 +35,16 @@ const galleryItems = [
   { id: 'activity-4', src: '/gallery/Activity-04.jpeg', tab: 'Activity', type: 'image', title: 'Activity – 4' },
   { id: 'activity-5', src: '/gallery/Activity-05.jpeg', tab: 'Activity', type: 'image', title: 'Activity – 5' },
   { id: 'activity-video-1', src: '/gallery/Activity-video-01.mp4', tab: 'Activity', type: 'video', title: 'Activity Video', poster: '/gallery/Activity-01.jpeg' },
+
+  // ── School ─────────────────────────────────────────────────────────────────
+  { id: 'school-1', src: '/gallery/School-1.jpeg', tab: 'School', type: 'image', title: 'School – 1' },
+  { id: 'school-2', src: '/gallery/School-2.jpeg', tab: 'School', type: 'image', title: 'School – 2' },
+  { id: 'school-3', src: '/gallery/School-3.jpeg', tab: 'School', type: 'image', title: 'School – 3' },
+  { id: 'school-4', src: '/gallery/School-4.jpeg', tab: 'School', type: 'image', title: 'School – 4' },
+  { id: 'school-video-1', src: '/gallery/School-video-1.mp4', tab: 'School', type: 'video', title: 'School Video', poster: '/gallery/School-1.jpeg' },
 ]
 
-const TABS = ['All', 'Orphanage', 'Events', 'Activity']
+const TABS = ['All', 'Orphanage', 'Events', 'Activity', 'School']
 
 // ─── Tiny play-button SVG overlay for video cards ────────────────────────────
 const PlayIcon = () => (
@@ -206,11 +213,12 @@ function GalleryCard({ item, onClick }) {
         />
       ) : (
         <>
-          <img
-            src={item.poster}
-            alt={item.title}
-            loading="lazy"
-            decoding="async"
+          <video
+            src={item.src}
+            muted
+            playsInline
+            preload="metadata"
+            poster={item.poster}
             style={{
               width: '100%', height: '100%',
               objectFit: 'cover',

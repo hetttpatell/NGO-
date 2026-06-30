@@ -123,7 +123,7 @@ export default function Footer() {
               {[
                 { label: 'Email', text: 'srisnehfoundation@gmail.com' },
                 { label: 'Phone', text: '+91 9879794198' },
-                { label: 'Address', text: 'Manekchowk, Ahmedabad 380001' },
+                { label: 'Address', text: '1445/ Piplawalo Khancho, Seth Ni Pole, Mandvi Pole, Manekchowk, Ahmedabad 380001' },
                 { label: 'Hours', text: 'Mon–Sat: 9 AM – 6 PM' },
               ].map((item) => (
                 <div key={item.label}>

@@ -194,7 +194,7 @@ export default function Connect() {
                 {[
                   { label: 'Email', value: 'srisnehfoundation@gmail.com', sub: 'For general inquiries' },
                   { label: 'Phone', value: '+91 9879794198', sub: 'Mon–Sat, 9 AM – 6 PM' },
-                  { label: 'Address', value: '1445, Piplawalo Khancho,\nSheth Ni Pole, Mandvi Ni Pole,\nManekchowk, Ahmedabad-380001.' },
+                  { label: 'Address', value: '1445/ Piplawalo Khancho,\nSeth Ni Pole, Mandvi Pole,\nManekchowk, Ahmedabad-380001' },
                   { label: 'Office Hours', value: 'Monday – Saturday: 9 AM – 6 PM', sub: 'Emergency helpline available Sundays' },
                 ].map(item => (
                   <div key={item.label} style={{ paddingBottom: '20px', borderBottom: '1px solid #E8E4DF' }}>
